@@ -6,28 +6,31 @@ settings:
 
 dependencies:
   '@radix-ui/react-dropdown-menu':
-    specifier: ^2.1.1
+    specifier: 2.1.1
     version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
   '@radix-ui/react-navigation-menu':
-    specifier: ^1.2.0
+    specifier: 1.2.0
     version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
   '@radix-ui/react-slot':
-    specifier: ^1.1.0
+    specifier: 1.1.0
     version: 1.1.0(@types/react@18.3.3)(react@18.3.1)
   class-variance-authority:
-    specifier: ^0.7.0
+    specifier: 0.7.0
     version: 0.7.0
   clsx:
-    specifier: ^2.1.1
+    specifier: 2.1.1
     version: 2.1.1
+  eslint-plugin-tailwindcss:
+    specifier: 3.17.4
+    version: 3.17.4(tailwindcss@3.4.4)
   lucide-react:
-    specifier: ^0.408.0
+    specifier: 0.408.0
     version: 0.408.0(react@18.3.1)
   next:
     specifier: 14.2.5
     version: 14.2.5(react-dom@18.3.1)(react@18.3.1)
   next-themes:
-    specifier: ^0.3.0
+    specifier: 0.3.0
     version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
   react:
     specifier: 18.3.1
@@ -36,10 +39,10 @@ dependencies:
     specifier: 18.3.1
     version: 18.3.1(react@18.3.1)
   tailwind-merge:
-    specifier: ^2.4.0
+    specifier: 2.4.0
     version: 2.4.0
   tailwindcss-animate:
-    specifier: ^1.0.7
+    specifier: 1.0.7
     version: 1.0.7(tailwindcss@3.4.4)
 
 devDependencies:
@@ -71,10 +74,10 @@ devDependencies:
     specifier: 2.29.1
     version: 2.29.1(@typescript-eslint/parser@7.16.0)(eslint@8.57.0)
   eslint-plugin-prettier:
-    specifier: ^5.1.3
+    specifier: 5.1.3
     version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.2)
   husky:
-    specifier: ^9.0.11
+    specifier: 9.0.11
     version: 9.0.11
   postcss:
     specifier: 8.4.39
@@ -1968,6 +1971,17 @@ packages:
       semver: 6.3.1
       string.prototype.matchall: 4.0.11
     dev: true
+
+  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.4):
+    resolution: {integrity: sha512-gJAEHmCq2XFfUP/+vwEfEJ9igrPeZFg+skeMtsxquSQdxba9XRk5bn0Bp9jxG1VV9/wwPKi1g3ZjItu6MIjhNg==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      tailwindcss: ^3.4.0
+    dependencies:
+      fast-glob: 3.3.2
+      postcss: 8.4.39
+      tailwindcss: 3.4.4
+    dev: false
 
   /eslint-scope@7.2.2:
     resolution: {integrity: sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==}
