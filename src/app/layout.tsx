@@ -19,7 +19,7 @@ const Root = ({
 	children: React.ReactNode;
 }>) => (
 	<html lang="en">
-		<body className={cn("min-h-screen bg-background font-sans antialiased", roboto.className)}>
+		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
 			{children}
 		</body>
 	</html>
