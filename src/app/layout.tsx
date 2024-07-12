@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
+import { Header } from "@/components/Header";
 
 const roboto = Roboto({
 	weight: ["300", "400", "700"],
@@ -19,8 +21,11 @@ const Root = ({
 	children: React.ReactNode;
 }>) => (
 	<html lang="en">
-		<body className={cn("min-h-screen bg-background font-sans antialiased", roboto.className)}>
-			{children}
+		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
+			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+				<Header />
+				{children}
+			</ThemeProvider>
 		</body>
 	</html>
 );

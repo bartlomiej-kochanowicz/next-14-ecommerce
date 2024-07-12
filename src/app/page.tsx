@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
 			Home
 			<br />
 			<Button>Button</Button>
+			<ThemeToggle />
 		</div>
 	);
 };
