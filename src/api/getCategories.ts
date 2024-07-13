@@ -1,6 +1,6 @@
 import { type Category } from "@/types/category";
 
-export const getCategoriesList = async (): Promise<Category[]> => {
+export const getCategories = async (): Promise<Category[]> => {
 	try {
 		const response = await fetch("https://fakestoreapi.com/products/categories");
 

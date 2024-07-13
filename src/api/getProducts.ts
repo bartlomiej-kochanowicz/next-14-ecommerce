@@ -6,9 +6,13 @@ import { type Product } from "@/types/product";
 }; */
 
 export const getProducts = async (/* args?: GetProducts */): Promise<Product[]> => {
-	const response = await fetch("https://fakestoreapi.com/products");
+	try {
+		const response = await fetch("https://fakestoreapi.com/products");
 
-	const products = (await response.json()) as Product[];
+		const products = (await response.json()) as Product[];
 
-	return products;
+		return products;
+	} catch {
+		throw new Error("Error while fetching products.");
+	}
 };

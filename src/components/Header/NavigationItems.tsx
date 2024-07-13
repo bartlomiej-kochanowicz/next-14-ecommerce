@@ -1,25 +1,22 @@
 import Link from "next/link";
-import slugify from "slugify";
 import {
 	NavigationMenuItem,
 	NavigationMenuLink,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { getCategoriesList } from "@/api/getCategoriesList";
+import { getCategories } from "@/api/getCategories";
 import { HEADER } from "@/constants/header";
 import { categoriesIcons } from "@/constants/categoriesIcons";
 import { cn } from "@/lib/utils";
+import { createSlug } from "@/utlis/createSlug";
 
 export const NavigationItems = async () => {
-	const categories = await getCategoriesList();
+	const categories = await getCategories();
 
 	const navigationMenuList: { name: string; href: string; icon?: React.ElementType }[] = [
 		...categories.map(category => ({
 			name: category,
-			href: `/products/category/${slugify(category, {
-				replacement: "-",
-				remove: /'/g,
-			})}`,
+			href: `/products/category/${createSlug(category)}`,
 			icon: categoriesIcons[category],
 		})),
 		...HEADER,
