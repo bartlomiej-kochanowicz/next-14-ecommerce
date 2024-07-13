@@ -14,7 +14,7 @@ export const Logo = ({ children, className, priority = false, size = 35 }: LogoP
 		<Image
 			className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
 			src="/store-logo.svg"
-			alt="Store Logo"
+			alt="Ecommerce store logo"
 			width={size}
 			height={size}
 			priority={priority}

@@ -18,10 +18,10 @@ export const Header = () => {
 			</NavigationMenu>
 
 			<div className="flex gap-2">
-				<Button variant="ghost" size="icon">
+				<Button variant="ghost" size="icon" aria-label="Basket">
 					<ShoppingBasket />
 				</Button>
-				<Button variant="ghost" size="icon">
+				<Button variant="ghost" size="icon" aria-label="Profile">
 					<User />
 				</Button>
 			</div>
