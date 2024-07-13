@@ -1,12 +1,26 @@
+import { type Metadata } from "next";
 import { getCategoriesSlugs } from "@/api/getCategoriesSlugs";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H1 } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductsGrid } from "@/components/ProductsGrid";
+import { toTitleCase } from "@/utlis/toTitleCase";
 
 type ProductsCategoryProps = {
 	params: {
 		category: string;
+	};
+};
+export const generateMetadata = async ({
+	params: { category },
+}: ProductsCategoryProps): Promise<Metadata> => {
+	const categoriesSlugs = await getCategoriesSlugs();
+
+	const title = toTitleCase(categoriesSlugs[category]);
+
+	return {
+		title,
+		description: `Products in ${title} category`,
 	};
 };
 

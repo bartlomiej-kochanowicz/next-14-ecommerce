@@ -13,7 +13,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-	title: "Next 13 ecommerce store",
+	title: {
+		template: "%s  | Next ecommerce store",
+		default: "Next ecommerce store",
+	},
 	description: "Nice ecommerce store built with Next.js",
 };
 
