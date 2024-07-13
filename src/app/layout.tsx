@@ -30,7 +30,7 @@ const Root = ({
 			<NextTopLoader color="hsl(var(--foreground))" showSpinner={false} />
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
-				<main className="mx-auto max-w-screen-xl px-5 py-3">{children}</main>
+				<main className="mx-auto mt-16 max-w-screen-xl px-5 py-3">{children}</main>
 				<Footer />
 			</ThemeProvider>
 		</body>
