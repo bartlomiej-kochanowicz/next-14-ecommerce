@@ -30,7 +30,9 @@ const ProductsCategory = async ({ params: { category } }: ProductsCategoryProps)
 
 	return (
 		<>
-			<H1 className="mb-4 capitalize">{categoriesSlugs[category]}</H1>
+			<H1 className="mb-4 capitalize">
+				{categoriesSlugs[category]} ({products.length})
+			</H1>
 			<ProductsGrid>
 				{products.map(product => (
 					<ProductCard {...product} key={product.id} />
