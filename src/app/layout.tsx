@@ -26,11 +26,14 @@ const Root = ({
 	children: React.ReactNode;
 }>) => (
 	<html lang="en" suppressHydrationWarning>
-		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
+		<body className={cn("font-sans bg-background antialiased", roboto.className)}>
 			<NextTopLoader color="hsl(var(--foreground))" showSpinner={false} />
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
-				<main className="mx-auto mt-16 max-w-screen-xl px-5 py-3">{children}</main>
+				{/* 8rem = header(4rem) + footer(4rem) */}
+				<main className="mx-auto mt-16 min-h-[calc(100dvh-8rem)] max-w-screen-xl px-5 py-3">
+					{children}
+				</main>
 				<Footer />
 			</ThemeProvider>
 		</body>
