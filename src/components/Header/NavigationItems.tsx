@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { type LucideIcon } from "lucide-react";
 import {
 	NavigationMenuItem,
 	NavigationMenuLink,
@@ -9,11 +10,16 @@ import { HEADER } from "@/constants/header";
 import { categoriesIcons } from "@/constants/categoriesIcons";
 import { cn } from "@/lib/utils";
 import { createSlug } from "@/utlis/createSlug";
+import { SheetClose } from "@/components/ui/sheet";
 
-export const NavigationItems = async () => {
+type NavigationItemsProps = {
+	hambugerMenu?: boolean;
+};
+
+export const NavigationItems = async ({ hambugerMenu }: NavigationItemsProps) => {
 	const categories = await getCategories();
 
-	const navigationMenuList: { name: string; href: string; icon?: React.ElementType }[] = [
+	const navigationMenuList: { name: string; href: string; icon?: LucideIcon }[] = [
 		...categories.map(category => ({
 			name: category,
 			href: `/products/category/${createSlug(category)}`,
@@ -24,16 +30,31 @@ export const NavigationItems = async () => {
 
 	return (
 		<>
-			{navigationMenuList.map(({ name, href, icon: Icon }) => (
-				<NavigationMenuItem key={name}>
-					<Link href={href} legacyBehavior passHref>
-						<NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "capitalize")}>
-							{Icon && <Icon size={20} className="mr-2" />}
-							{name}
-						</NavigationMenuLink>
-					</Link>
-				</NavigationMenuItem>
-			))}
+			{navigationMenuList.map(({ name, href, icon: Icon }) => {
+				if (hambugerMenu) {
+					return (
+						<NavigationMenuItem key={name}>
+							<SheetClose asChild>
+								<Link href={href} className={cn(navigationMenuTriggerStyle(), "capitalize")}>
+									{Icon && <Icon size={20} className="mr-2" />}
+									{name}
+								</Link>
+							</SheetClose>
+						</NavigationMenuItem>
+					);
+				}
+
+				return (
+					<NavigationMenuItem key={name}>
+						<Link href={href} legacyBehavior passHref>
+							<NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "capitalize")}>
+								{Icon && <Icon size={20} className="mr-2" />}
+								{name}
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+				);
+			})}
 		</>
 	);
 };

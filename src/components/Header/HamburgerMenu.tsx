@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import {
 	Sheet,
+	SheetClose,
 	SheetContent,
 	SheetDescription,
 	SheetHeader,
@@ -25,10 +26,13 @@ export const HamburgerMenu = ({ children }: HamburgerMenuProps) => (
 		<SheetContent side="left" className="w-72">
 			<SheetHeader className="mb-2">
 				<SheetTitle>
-					<Logo className="flex items-center">
-						<span className="font-bold">Ecommerce - Store</span>
-					</Logo>
+					<SheetClose asChild>
+						<Logo className="flex items-center">
+							<span className="font-bold">Ecommerce - Store</span>
+						</Logo>
+					</SheetClose>
 				</SheetTitle>
+
 				<SheetDescription className="hidden">Navigation menu</SheetDescription>
 			</SheetHeader>
 			<NavigationMenu>
