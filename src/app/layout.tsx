@@ -27,7 +27,7 @@ const Root = ({
 }>) => (
 	<html lang="en" suppressHydrationWarning>
 		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
-			<NextTopLoader color="hsl(var(--foreground))" />
+			<NextTopLoader color="hsl(var(--foreground))" showSpinner={false} />
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
 				<main className="mx-auto max-w-screen-xl px-5 py-3">{children}</main>
