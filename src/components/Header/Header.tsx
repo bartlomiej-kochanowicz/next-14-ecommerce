@@ -7,7 +7,7 @@ import { NavigationItems } from "@/components/Header/NavigationItems";
 import { Logo } from "@/components/Logo";
 
 export const Header = () => (
-	<header className="fixed inset-x-0 top-0 mx-auto flex max-w-screen-xl justify-between bg-background px-5 py-3">
+	<header className="fixed inset-x-0 top-0 z-10 mx-auto flex max-w-screen-xl justify-between bg-background px-5 py-3">
 		<HamburgerMenu>
 			<NavigationItems hambugerMenu />
 		</HamburgerMenu>

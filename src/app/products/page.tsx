@@ -5,8 +5,8 @@ export const metadata: Metadata = {
 	description: "Products page with list of all products",
 };
 
-const Products = () => {
+const ProductsPage = () => {
 	return <div>products</div>;
 };
 
-export default Products;
+export default ProductsPage;

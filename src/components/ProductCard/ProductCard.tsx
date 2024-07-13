@@ -23,14 +23,14 @@ export const ProductCard = async ({
 	const blurData = await getBase64(image);
 
 	return (
-		<Card>
+		<Card className="group transition hover:border-neutral-400">
 			<CardHeader>
 				<CardTitle className="sm:h-12 sm:overflow-hidden">{title}</CardTitle>
 				<CardDescription className="capitalize">{category}</CardDescription>
 			</CardHeader>
-			<CardContent>
+			<CardContent className="overflow-hidden">
 				<Image
-					className="mx-auto h-60 object-contain"
+					className="mx-auto h-60 object-contain transition duration-500 group-hover:scale-105"
 					src={image}
 					alt={description}
 					width={180}

@@ -24,7 +24,7 @@ export const generateMetadata = async ({
 	};
 };
 
-const ProductsCategory = async ({ params: { category } }: ProductsCategoryProps) => {
+const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryProps) => {
 	const categoriesSlugs = await getCategoriesSlugs();
 	const products = await getProductsByCategory(categoriesSlugs[category]);
 
@@ -42,4 +42,4 @@ const ProductsCategory = async ({ params: { category } }: ProductsCategoryProps)
 	);
 };
 
-export default ProductsCategory;
+export default ProductsCategoryPage;

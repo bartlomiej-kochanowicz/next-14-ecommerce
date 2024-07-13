@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 	description: "Main page with categories and products",
 };
 
-const Home = async () => {
+const HomePage = async () => {
 	const products = await getProducts();
 
 	return (
@@ -20,4 +20,4 @@ const Home = async () => {
 	);
 };
 
-export default Home;
+export default HomePage;
