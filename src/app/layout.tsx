@@ -25,7 +25,7 @@ const Root = ({
 		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
-				{children}
+				<main className="mx-auto max-w-screen-xl px-5 py-3">{children}</main>
 				<Footer />
 			</ThemeProvider>
 		</body>

@@ -1,5 +1,5 @@
 const Home = () => {
-	return <main className="mx-auto h-full max-w-screen-xl px-5 py-3">Home</main>;
+	return <>Home</>;
 };
 
 export default Home;
