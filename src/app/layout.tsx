@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import NextTopLoader from "nextjs-toploader";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -23,6 +24,7 @@ const Root = ({
 }>) => (
 	<html lang="en" suppressHydrationWarning>
 		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
+			<NextTopLoader color="hsl(var(--foreground))" />
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
 				<main className="mx-auto max-w-screen-xl px-5 py-3">{children}</main>

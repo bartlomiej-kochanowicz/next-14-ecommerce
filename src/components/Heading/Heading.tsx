@@ -16,7 +16,7 @@ export const Heading = Object.fromEntries(
 			level.toUpperCase(),
 			({ className: topClassName, ...rest }: HTMLAttributes<HTMLHeadingElement>) =>
 				createElement(level, {
-					className: twMerge("text-gray-900 dark:text-white", className, topClassName),
+					className: twMerge(className, topClassName),
 					...rest,
 				}),
 		]),
