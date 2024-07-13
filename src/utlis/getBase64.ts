@@ -4,7 +4,7 @@ export const getBase64 = async (url: string) => {
 	try {
 		const response = await fetch(url);
 		if (!response.ok) {
-			throw new Error("Network response was not ok while fetching image");
+			throw new Error("Failed while fetching image");
 		}
 		const buffer = await response.arrayBuffer();
 		const { base64 } = await getPlaiceholder(Buffer.from(buffer));

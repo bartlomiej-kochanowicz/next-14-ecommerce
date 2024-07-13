@@ -12,7 +12,7 @@ import { getBase64 } from "@/utlis/getBase64";
 
 export const ProductCard = async ({ title, description, image }: Product) => {
 	const blurData = await getBase64(image);
-	console.log(blurData);
+
 	return (
 		<Card>
 			<CardHeader>
@@ -24,9 +24,10 @@ export const ProductCard = async ({ title, description, image }: Product) => {
 					className="mx-auto max-h-60 w-auto"
 					src={image}
 					alt={description}
-					width={755}
+					width={180}
 					height={240}
-					// blurDataURL={blurData}
+					blurDataURL={blurData}
+					placeholder="blur"
 				/>
 			</CardContent>
 			<CardFooter className="flex justify-between">footer</CardFooter>
