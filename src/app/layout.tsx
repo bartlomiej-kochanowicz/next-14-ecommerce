@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const roboto = Roboto({
 	weight: ["300", "400", "700"],
@@ -20,11 +21,12 @@ const Root = ({
 }: Readonly<{
 	children: React.ReactNode;
 }>) => (
-	<html lang="en">
+	<html lang="en" suppressHydrationWarning>
 		<body className={cn("font-sans min-h-screen bg-background antialiased", roboto.className)}>
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<Header />
 				{children}
+				<Footer />
 			</ThemeProvider>
 		</body>
 	</html>
