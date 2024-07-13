@@ -21,7 +21,7 @@ export const ProductCard = async ({ title, description, image }: Product) => {
 			</CardHeader>
 			<CardContent>
 				<Image
-					className="mx-auto max-h-60 w-auto"
+					className="mx-auto h-60 object-contain"
 					src={image}
 					alt={description}
 					width={180}
