@@ -22,7 +22,7 @@ export const HamburgerMenu = ({ children }: HamburgerMenuProps) => (
 		>
 			<Menu />
 		</SheetTrigger>
-		<SheetContent side="left" className="w-64">
+		<SheetContent side="left" className="w-72">
 			<SheetHeader className="mb-2">
 				<SheetTitle>
 					<Logo className="flex items-center">

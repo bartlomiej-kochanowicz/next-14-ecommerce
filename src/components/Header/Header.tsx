@@ -10,7 +10,7 @@ export const Header = () => {
 	const navigationItems = <NavigationItems />;
 
 	return (
-		<header className="flex justify-between px-3 py-2">
+		<header className="mx-auto flex max-w-screen-xl justify-between px-5 py-3">
 			<HamburgerMenu>{navigationItems}</HamburgerMenu>
 			<NavigationMenu className="hidden lg:flex">
 				<Logo priority className="mr-2" />
