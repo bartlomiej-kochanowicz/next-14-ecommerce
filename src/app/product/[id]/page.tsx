@@ -56,6 +56,16 @@ export const generateMetadata = async ({ params: { id } }: ProductPageProps): Pr
 	return {
 		title,
 		description,
+		openGraph: {
+			title,
+			description,
+			images: [
+				{
+					url: product.image,
+					alt: description,
+				},
+			],
+		},
 	};
 };
 
