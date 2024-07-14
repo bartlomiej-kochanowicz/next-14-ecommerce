@@ -7,7 +7,11 @@ const StaticPage = async ({ params }: { params: { filename: string } }) => {
 		() => notFound(),
 	);
 
-	return <Content />;
+	return (
+		<article className="prose">
+			<Content />
+		</article>
+	);
 };
 
 export default StaticPage;

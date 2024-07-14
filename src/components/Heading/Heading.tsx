@@ -5,12 +5,12 @@ export const Heading = Object.fromEntries(
 	new Map(
 		(
 			[
-				["h1", "text-5xl font-extrabold"],
-				["h2", "text-4xl font-bold"],
-				["h3", "text-3xl font-bold"],
-				["h4", "text-2xl font-bold"],
-				["h5", "text-xl font-bold"],
-				["h6", "text-lg font-bold"],
+				["h1", "text-4xl font-extrabold"],
+				["h2", "text-3xl font-bold"],
+				["h3", "text-lg font-bold"],
+				["h4", "text-base font-bold"],
+				["h5", "text-base"],
+				["h6", "text-base"],
 			] as const
 		).map(([level, className]) => [
 			level.toUpperCase(),
