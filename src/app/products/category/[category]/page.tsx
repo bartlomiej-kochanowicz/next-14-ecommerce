@@ -1,6 +1,5 @@
 import { type Metadata } from "next";
 import { Frown } from "lucide-react";
-import { Suspense } from "react";
 import { getCategoriesSlugs } from "@/api/getCategoriesSlugs";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H1 } from "@/components/Heading";
@@ -72,11 +71,9 @@ const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryPr
 				</BreadcrumbList>
 			</Breadcrumb>
 			<ProductsGrid>
-				<Suspense>
-					{products.map(product => (
-						<ProductCard {...product} key={product.id} />
-					))}
-				</Suspense>
+				{products.map(product => (
+					<ProductCard {...product} key={product.id} />
+				))}
 			</ProductsGrid>
 		</>
 	);

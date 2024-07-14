@@ -60,35 +60,33 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 					</BreadcrumbItem>
 				</BreadcrumbList>
 			</Breadcrumb>
-			<Card className="mb-8 md:flex" as="section">
-				<Suspense>
-					<CardContent className="p-6">
-						<Image
-							className="mx-auto size-96 object-contain md:min-w-96"
-							src={image}
-							alt={description}
-							width={384}
-							height={384}
-							blurDataURL={blurData}
-							placeholder="blur"
-						/>
-					</CardContent>
-					<div className="w-auto">
-						<CardHeader>
-							<CardTitle className="sm:h-12 sm:overflow-hidden" as="h1">
-								{title}
-							</CardTitle>
-							<CardDescription className="capitalize">{description}</CardDescription>
-						</CardHeader>
-						<CardFooter className="flex items-center justify-between">
-							<span className="text-lg font-bold">{formatPrice(price)}</span>
-							<ProductRate {...rating} />
-						</CardFooter>
-					</div>
-				</Suspense>
+			<Card className="mb-8 md:flex" as="article">
+				<CardContent className="p-6">
+					<Image
+						className="mx-auto size-96 object-contain md:min-w-96"
+						src={image}
+						alt={description}
+						width={384}
+						height={384}
+						blurDataURL={blurData}
+						placeholder="blur"
+					/>
+				</CardContent>
+				<div className="w-auto">
+					<CardHeader>
+						<CardTitle className="sm:h-12 sm:overflow-hidden" as="h1">
+							{title}
+						</CardTitle>
+						<CardDescription className="capitalize">{description}</CardDescription>
+					</CardHeader>
+					<CardFooter className="flex items-center justify-between">
+						<span className="text-lg font-bold">{formatPrice(price)}</span>
+						<ProductRate {...rating} />
+					</CardFooter>
+				</div>
 			</Card>
 
-			<section>
+			<aside>
 				<H2 className="mb-4">Other products in {category}</H2>
 				<ProductsGrid>
 					<Suspense>
@@ -97,7 +95,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 						))}
 					</Suspense>
 				</ProductsGrid>
-			</section>
+			</aside>
 		</>
 	);
 };
