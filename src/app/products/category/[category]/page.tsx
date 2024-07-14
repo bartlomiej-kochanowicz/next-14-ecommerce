@@ -1,11 +1,21 @@
 import { type Metadata } from "next";
 import { Frown } from "lucide-react";
+import { Suspense } from "react";
 import { getCategoriesSlugs } from "@/api/getCategoriesSlugs";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H1 } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { toTitleCase } from "@/utlis/toTitleCase";
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { ROUTES } from "@/constants/routes";
 
 type ProductsCategoryProps = {
 	params: {
@@ -47,13 +57,26 @@ const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryPr
 
 	return (
 		<>
-			<H1 className="mb-4 capitalize">
+			<H1 className="capitalize">
 				{categoriesSlugs[category]} ({products.length})
 			</H1>
+			<Breadcrumb className="py-3">
+				<BreadcrumbList>
+					<BreadcrumbItem>
+						<BreadcrumbLink href={ROUTES.PRODUCTS.ALL}>All products</BreadcrumbLink>
+					</BreadcrumbItem>
+					<BreadcrumbSeparator />
+					<BreadcrumbItem>
+						<BreadcrumbPage className="capitalize">{category}</BreadcrumbPage>
+					</BreadcrumbItem>
+				</BreadcrumbList>
+			</Breadcrumb>
 			<ProductsGrid>
-				{products.map(product => (
-					<ProductCard {...product} key={product.id} />
-				))}
+				<Suspense>
+					{products.map(product => (
+						<ProductCard {...product} key={product.id} />
+					))}
+				</Suspense>
 			</ProductsGrid>
 		</>
 	);
