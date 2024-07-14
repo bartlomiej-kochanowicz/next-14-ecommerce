@@ -1,4 +1,5 @@
 import { type Product } from "@/types/product";
+import { createApiUrl } from "@/utlis/createApiUrl";
 
 /* type GetProducts = {
 	limit?: number;
@@ -7,7 +8,7 @@ import { type Product } from "@/types/product";
 
 export const getProducts = async (/* args?: GetProducts */): Promise<Product[]> => {
 	try {
-		const response = await fetch("https://fakestoreapi.com/products");
+		const response = await fetch(createApiUrl("/products"));
 
 		const products = (await response.json()) as Product[];
 

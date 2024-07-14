@@ -11,7 +11,12 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 
 	console.log(product);
 
-	return <div>Product page</div>;
+	return (
+		<>
+			<section>Product page</section>
+			<section>similar in this category</section>
+		</>
+	);
 };
 
 export default ProductPage;

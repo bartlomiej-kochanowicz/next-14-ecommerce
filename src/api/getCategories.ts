@@ -1,8 +1,9 @@
 import { type Category } from "@/types/category";
+import { createApiUrl } from "@/utlis/createApiUrl";
 
 export const getCategories = async (): Promise<Category[]> => {
 	try {
-		const response = await fetch("https://fakestoreapi.com/products/categories");
+		const response = await fetch(createApiUrl("/products/categories"));
 
 		const categories = (await response.json()) as Category[];
 
