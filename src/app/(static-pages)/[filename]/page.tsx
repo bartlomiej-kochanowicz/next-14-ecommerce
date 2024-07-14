@@ -8,7 +8,7 @@ const StaticPage = async ({ params }: { params: { filename: string } }) => {
 	);
 
 	return (
-		<article className="prose">
+		<article className="prose mx-auto max-w-3xl">
 			<Content />
 		</article>
 	);
