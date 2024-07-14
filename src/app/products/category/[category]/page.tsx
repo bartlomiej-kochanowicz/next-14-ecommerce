@@ -15,12 +15,21 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/constants/routes";
+import { getCategories } from "@/api/getCategories";
+import { createSlug } from "@/utlis/createSlug";
 
 type ProductsCategoryProps = {
 	params: {
 		category: string;
 	};
 };
+
+export const generateStaticParams = async () => {
+	const products = await getCategories();
+
+	return products.map(category => ({ category: createSlug(category) }));
+};
+
 export const generateMetadata = async ({
 	params: { category },
 }: ProductsCategoryProps): Promise<Metadata> => {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Suspense } from "react";
+import { type Metadata } from "next";
 import { getProduct } from "@/api/getProduct";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H2 } from "@/components/Heading";
@@ -26,10 +27,35 @@ import {
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/constants/routes";
 import { createSlug } from "@/utlis/createSlug";
+import { getProducts } from "@/api/getProducts";
 
 type ProductPageProps = {
 	params: {
 		id: string;
+	};
+};
+
+export const generateStaticParams = async () => {
+	const products = await getProducts();
+
+	return products.map(({ id }) => ({ id: String(id) }));
+};
+
+export const generateMetadata = async ({ params: { id } }: ProductPageProps): Promise<Metadata> => {
+	const product = await getProduct(id);
+
+	if (!product) {
+		return {
+			title: "Product not found",
+			description: "Product not found",
+		};
+	}
+
+	const { description, title } = product;
+
+	return {
+		title,
+		description,
 	};
 };
 
