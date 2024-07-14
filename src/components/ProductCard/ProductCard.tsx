@@ -27,7 +27,7 @@ export const ProductCard = async ({
 	const blurData = await getBase64(image);
 
 	return (
-		<Link href={`${ROUTES.PRODUCT}${id}`}>
+		<Link href={`${ROUTES.PRODUCT}/${id}`}>
 			<Card className="group transition hover:border-neutral-400">
 				<CardHeader>
 					<CardTitle className="sm:h-12 sm:overflow-hidden">{title}</CardTitle>

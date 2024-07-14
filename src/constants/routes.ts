@@ -1,10 +1,10 @@
 export const ROUTES = {
 	HOME: "/",
 	PRODUCTS: {
-		ALL: "/products/",
-		CATEGORY: "/products/category/",
+		ALL: "/products",
+		CATEGORY: "/products/category",
 	},
-	PRODUCT: "/product/",
-	ABOUT: "/about/",
-	CONTACT: "/contact/",
+	PRODUCT: "/product",
+	ABOUT: "/about",
+	CONTACT: "/contact",
 };
