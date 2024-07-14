@@ -8,7 +8,7 @@ export const Footer = () => {
 				<Logo className="mr-2" />
 				<p>© 2024 Ecommerce - Store, Cracow</p>
 			</div>
-			<ThemeToggle />
+			<ThemeToggle className="hidden lg:flex" />
 		</footer>
 	);
 };
