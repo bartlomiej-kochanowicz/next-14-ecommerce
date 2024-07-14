@@ -3,7 +3,12 @@ import withMdx from "@next/mdx";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: ["fakestoreapi.com"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "fakestoreapi.com",
+			},
+		],
 	},
 	pageExtensions: ["mdx", "ts", "tsx"],
 };
