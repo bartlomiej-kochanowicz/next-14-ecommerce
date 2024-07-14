@@ -68,7 +68,7 @@ const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryPr
 			<H1 className="capitalize">
 				{categoriesSlugs[category]} ({products.length})
 			</H1>
-			<Breadcrumb className="py-3">
+			<Breadcrumb className="my-3">
 				<BreadcrumbList>
 					<BreadcrumbItem>
 						<BreadcrumbLink href={ROUTES.PRODUCTS.ALL}>All products</BreadcrumbLink>
