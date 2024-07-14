@@ -1,9 +1,11 @@
+import { type Category } from "@/types/category";
+
 export type Product = {
 	id: number;
 	title: string;
 	price: number;
 	description: string;
-	category: string;
+	category: Category;
 	image: string;
 	rating: {
 		rate: number;
