@@ -71,6 +71,10 @@ const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryPr
 			<Breadcrumb className="my-3">
 				<BreadcrumbList>
 					<BreadcrumbItem>
+						<BreadcrumbLink href={ROUTES.HOME}>Home</BreadcrumbLink>
+					</BreadcrumbItem>
+					<BreadcrumbSeparator />
+					<BreadcrumbItem>
 						<BreadcrumbLink href={ROUTES.PRODUCTS.ALL}>All products</BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
