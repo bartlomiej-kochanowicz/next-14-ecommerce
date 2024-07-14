@@ -10,12 +10,16 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export const ThemeToggle = () => {
+type ThemeToggleProps = Readonly<{
+	className?: string;
+}>;
+
+export const ThemeToggle = ({ className }: ThemeToggleProps) => {
 	const { setTheme, theme: currentTheme, themes } = useTheme();
 
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
+			<DropdownMenuTrigger asChild className={className}>
 				<Button variant="outline" size="icon">
 					<Sun
 						size={24}
