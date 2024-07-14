@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type LucideIcon } from "lucide-react";
+import { Earth, type LucideIcon } from "lucide-react";
 import {
 	NavigationMenuItem,
 	NavigationMenuLink,
@@ -11,6 +11,7 @@ import { categoriesIcons } from "@/constants/categoriesIcons";
 import { cn } from "@/lib/utils";
 import { createSlug } from "@/utlis/createSlug";
 import { SheetClose } from "@/components/ui/sheet";
+import { ROUTES } from "@/constants/routes";
 
 type NavigationItemsProps = {
 	hambugerMenu?: boolean;
@@ -19,13 +20,16 @@ type NavigationItemsProps = {
 export const NavigationItems = async ({ hambugerMenu }: NavigationItemsProps) => {
 	const categories = await getCategories();
 
+	const [allProducts, ...restHeader] = HEADER;
+
 	const navigationMenuList: { name: string; href: string; icon?: LucideIcon }[] = [
+		{ ...allProducts, icon: Earth },
 		...categories.map(category => ({
 			name: category,
-			href: `/products/category/${createSlug(category)}`,
+			href: `${ROUTES.PRODUCTS.CATEGORY}${createSlug(category)}`,
 			icon: categoriesIcons[category],
 		})),
-		...HEADER,
+		...restHeader,
 	];
 
 	return (

@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import { Frown } from "lucide-react";
 import { getCategoriesSlugs } from "@/api/getCategoriesSlugs";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H1 } from "@/components/Heading";
@@ -16,6 +17,13 @@ export const generateMetadata = async ({
 }: ProductsCategoryProps): Promise<Metadata> => {
 	const categoriesSlugs = await getCategoriesSlugs();
 
+	if (!categoriesSlugs[category]) {
+		return {
+			title: "Category not found",
+			description: "Category not found",
+		};
+	}
+
 	const title = toTitleCase(categoriesSlugs[category]);
 
 	return {
@@ -27,6 +35,15 @@ export const generateMetadata = async ({
 const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryProps) => {
 	const categoriesSlugs = await getCategoriesSlugs();
 	const products = await getProductsByCategory(categoriesSlugs[category]);
+
+	if (!categoriesSlugs[category]) {
+		return (
+			<div className="mt-12 flex justify-center gap-4">
+				<H1>Category not found</H1>
+				<Frown size={48} />
+			</div>
+		);
+	}
 
 	return (
 		<>
