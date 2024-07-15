@@ -15,4 +15,13 @@ Open [http://localhost:4321](http://localhost:4321) with your browser to see the
 
 ## Live version
 
-Open [this](<[next-14-ecommerce-ghcy.vercel.app/](https://next-14-ecommerce-fawn.vercel.app/)>) page to see live version.
+Open [this link](https://next-14-ecommerce-fawn.vercel.app/) to see live version.
+
+## Used liblaries
+
+- `tailwindcss`, `clsx` and `tailwind-merge` for styling
+- `shadcn` with `radix-ui` as a component liblary
+- `lucide-react `for icons
+- `plaiceholder` and `sharp` for blurring remote images
+- `next-themes` for handling themes
+- `prettier`, `eslint` and `husky` for static code analysis
