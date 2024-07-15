@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
 	Card,
@@ -9,11 +8,10 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { type Product } from "@/types/product";
-import { getBase64 } from "@/utlis/getBase64";
-
 import { formatPrice } from "@/helpers/formatPrice";
 import { ROUTES } from "@/constants/routes";
 import { ProductRate } from "@/components/ProductRate";
+import { ResponsiveRemoteImage } from "@/components/ResponsiveRemoteImage";
 
 export const ProductCard = async ({
 	title,
@@ -24,7 +22,7 @@ export const ProductCard = async ({
 	price,
 	id,
 }: Product) => {
-	const blurData = await getBase64(image);
+	// const blurData = await getBase64(image);
 
 	return (
 		<Link href={`${ROUTES.PRODUCT}/${id}`}>
@@ -33,15 +31,13 @@ export const ProductCard = async ({
 					<CardTitle className="sm:h-12 sm:overflow-hidden">{title}</CardTitle>
 					<CardDescription className="capitalize">{category}</CardDescription>
 				</CardHeader>
-				<CardContent className="overflow-hidden">
-					<Image
-						className="mx-auto h-60 object-contain transition duration-500 group-hover:scale-105"
+				<CardContent>
+					<ResponsiveRemoteImage
+						className="h-60"
+						sizes="(min-width: 1280px) 248px, (min-width: 1040px) calc(33.18vw - 72px), (min-width: 640px) calc(50vw - 78px), calc(100vw - 90px)"
+						imageClassName="transition duration-500 group-hover:scale-105"
 						src={image}
 						alt={description}
-						width={180}
-						height={240}
-						blurDataURL={blurData}
-						placeholder="blur"
 					/>
 				</CardContent>
 				<CardFooter className="flex items-center justify-between">

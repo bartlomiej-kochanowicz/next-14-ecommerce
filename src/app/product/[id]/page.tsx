@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Suspense } from "react";
 import { type Metadata } from "next";
 import { getProduct } from "@/api/getProduct";
@@ -6,7 +5,6 @@ import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H2 } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductsGrid } from "@/components/ProductsGrid";
-import { getBase64 } from "@/utlis/getBase64";
 import {
 	Card,
 	CardContent,
@@ -28,6 +26,7 @@ import {
 import { ROUTES } from "@/constants/routes";
 import { createSlug } from "@/utlis/createSlug";
 import { getProducts } from "@/api/getProducts";
+import { ResponsiveRemoteImage } from "@/components/ResponsiveRemoteImage";
 
 type ProductPageProps = {
 	params: {
@@ -71,7 +70,6 @@ export const generateMetadata = async ({ params: { id } }: ProductPageProps): Pr
 
 const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 	const { image, category, description, title, price, rating } = await getProduct(id);
-	const blurData = await getBase64(image);
 	const similarProducts = await getProductsByCategory(category, { limit: "4" });
 
 	return (
@@ -98,14 +96,11 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 			</Breadcrumb>
 			<Card className="mb-8 md:flex" as="article">
 				<CardContent className="p-6">
-					<Image
-						className="mx-auto size-96 object-contain md:min-w-96"
+					<ResponsiveRemoteImage
+						className="mx-auto h-72 md:size-80 lg:size-96"
+						sizes="(min-width: 1040px) 384px, (min-width: 780px) 320px, calc(100vw - 90px)"
 						src={image}
 						alt={description}
-						width={384}
-						height={384}
-						blurDataURL={blurData}
-						placeholder="blur"
 					/>
 				</CardContent>
 				<div className="w-auto">
