@@ -1,12 +1,7 @@
 import { type Product } from "@/types/product";
 import { createApiUrl } from "@/utlis/createApiUrl";
 
-/* type GetProducts = {
-	limit?: number;
-	sort?: "asc" | "desc";
-}; */
-
-export const getProducts = async (/* args?: GetProducts */): Promise<Product[]> => {
+export const getProducts = async (): Promise<Product[]> => {
 	try {
 		const response = await fetch(createApiUrl("/products"));
 
