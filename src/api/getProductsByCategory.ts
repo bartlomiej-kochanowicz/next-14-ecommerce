@@ -10,6 +10,10 @@ export const getProductsByCategory = async (
 	try {
 		const response = await fetch(createApiUrl(`/products/category/${category}`, params));
 
+		if (!response.ok) {
+			throw new Error("Error while fetching products.");
+		}
+
 		const products = (await response.json()) as Product[];
 
 		return products;

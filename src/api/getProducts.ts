@@ -10,6 +10,10 @@ export const getProducts = async (/* args?: GetProducts */): Promise<Product[]> 
 	try {
 		const response = await fetch(createApiUrl("/products"));
 
+		if (!response.ok) {
+			throw new Error("Error while fetching products.");
+		}
+
 		const products = (await response.json()) as Product[];
 
 		return products;

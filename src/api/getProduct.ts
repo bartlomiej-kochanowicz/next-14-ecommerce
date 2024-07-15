@@ -5,6 +5,10 @@ export const getProduct = async (id: number | string): Promise<Product> => {
 	try {
 		const response = await fetch(createApiUrl(`/products/${id}`));
 
+		if (!response.ok) {
+			throw new Error("Error while fetching product.");
+		}
+
 		const product = (await response.json()) as Product;
 
 		return product;
