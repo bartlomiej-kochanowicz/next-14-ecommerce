@@ -22,7 +22,7 @@ Open [this link](https://next-14-ecommerce-fawn.vercel.app/) to see live version
 ## Used liblaries
 
 - `tailwindcss`, `clsx` and `tailwind-merge` for styling
-- `shadcn` with `radix-ui` as a component liblary
+- `shadcn` with `radix-ui` as a component library
 - `lucide-react `for icons
 - `plaiceholder` and `sharp` for blurring remote images
 - `next-themes` for handling themes
