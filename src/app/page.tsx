@@ -53,7 +53,7 @@ const HomePage = async () => {
 							))}
 						</NavigationMenuList>
 					</NavigationMenu>
-					<p className="mt-4 text-xs">*only for members with &quot;moja biedronka&quot; card</p>
+					<p className="mt-4 text-xs">*only for members with our card</p>
 				</div>
 			</article>
 			<section className="my-12 grid grid-cols-1 gap-6 md:grid-cols-3">
