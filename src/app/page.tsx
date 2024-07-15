@@ -27,7 +27,7 @@ const HomePage = async () => {
 
 	return (
 		<>
-			<article className="relative mt-6 flex h-[60vh] w-full flex-col items-center justify-end bg-foreground py-4 text-center text-background">
+			<article className="relative mt-6 flex h-[60vh] min-h-96 w-full flex-col items-center justify-end bg-foreground py-4 text-center text-background">
 				<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
 					<H1 className="inline-block bg-gradient-to-r from-primary-brand to-secondary-brand bg-clip-text text-8xl font-extrabold text-transparent">
 						SALE

@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+Project requires to have [pnpm](https://pnpm.io/) installed, [here is installation guide](https://pnpm.io/installation)
+
 First, run the development server:
 
 ```bash
