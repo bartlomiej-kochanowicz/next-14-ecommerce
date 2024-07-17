@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { type Metadata } from "next";
 import { getProduct } from "@/api/getProduct";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
@@ -120,11 +119,9 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 			<aside>
 				<H2 className="mb-4">Other products in {category}</H2>
 				<ProductsGrid>
-					<Suspense>
-						{similarProducts.map(product => (
-							<ProductCard {...product} key={product.id} />
-						))}
-					</Suspense>
+					{similarProducts.map(product => (
+						<ProductCard {...product} key={product.id} />
+					))}
 				</ProductsGrid>
 			</aside>
 		</>
