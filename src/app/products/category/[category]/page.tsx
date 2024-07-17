@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { Frown } from "lucide-react";
+import { notFound } from "next/navigation";
 import { getCategoriesSlugs } from "@/api/getCategoriesSlugs";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
 import { H1 } from "@/components/Heading";
@@ -55,12 +55,7 @@ const ProductsCategoryPage = async ({ params: { category } }: ProductsCategoryPr
 	const products = await getProductsByCategory(categoriesSlugs[category]);
 
 	if (!categoriesSlugs[category]) {
-		return (
-			<div className="mt-12 flex justify-center gap-4">
-				<H1>Category not found</H1>
-				<Frown size={48} />
-			</div>
-		);
+		notFound();
 	}
 
 	return (

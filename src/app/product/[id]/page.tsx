@@ -1,8 +1,8 @@
 import { type Metadata } from "next";
-import { Frown } from "lucide-react";
+import { notFound } from "next/navigation";
 import { getProduct } from "@/api/getProduct";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
-import { H1, H2 } from "@/components/Heading";
+import { H2 } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import {
@@ -72,12 +72,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 	const product = await getProduct(id);
 
 	if (!product) {
-		return (
-			<div className="mt-12 flex justify-center gap-4">
-				<H1>Product not found</H1>
-				<Frown size={48} />
-			</div>
-		);
+		notFound();
 	}
 
 	const { image, category, description, title, price, rating } = product;

@@ -12,7 +12,7 @@ export const getProduct = async (id: number | string): Promise<Product | null> =
 		const product = (await response.json()) as Product;
 
 		return product;
-	} catch (e) {
+	} catch {
 		return null;
 	}
 };
