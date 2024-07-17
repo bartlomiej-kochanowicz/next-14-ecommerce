@@ -1,7 +1,8 @@
 import { type Metadata } from "next";
+import { Frown } from "lucide-react";
 import { getProduct } from "@/api/getProduct";
 import { getProductsByCategory } from "@/api/getProductsByCategory";
-import { H2 } from "@/components/Heading";
+import { H1, H2 } from "@/components/Heading";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import {
@@ -68,7 +69,19 @@ export const generateMetadata = async ({ params: { id } }: ProductPageProps): Pr
 };
 
 const ProductPage = async ({ params: { id } }: ProductPageProps) => {
-	const { image, category, description, title, price, rating } = await getProduct(id);
+	const product = await getProduct(id);
+
+	if (!product) {
+		return (
+			<div className="mt-12 flex justify-center gap-4">
+				<H1>Product not found</H1>
+				<Frown size={48} />
+			</div>
+		);
+	}
+
+	const { image, category, description, title, price, rating } = product;
+
 	const similarProducts = await getProductsByCategory(category, { limit: "4" });
 
 	return (
