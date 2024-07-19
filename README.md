@@ -26,4 +26,5 @@ Open [this link](https://next-14-ecommerce-fawn.vercel.app/) to see live version
 - `lucide-react `for icons
 - `plaiceholder` and `sharp` for blurring remote images
 - `next-themes` for handling themes
+- `nextjs-headroom` my own library to handle show/hide header
 - `prettier`, `eslint` and `husky` for static code analysis
